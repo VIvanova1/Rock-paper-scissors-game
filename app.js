@@ -59,7 +59,8 @@ function game() {
 
         //reset game
         const resetBtnEl = document.createElement('button');
-        resetBtnEl.textContent = 'Reset Game'
+        resetBtnEl.textContent = 'Reset Game';
+        resetBtnEl.setAttribute('id', 'resetBtn')
         resetBtnEl.addEventListener('click', (e) => {
             userResultValue = 0;
             userResultDiv.textContent = `${playerName}: ${userResultValue}`;
@@ -75,11 +76,17 @@ function game() {
             element.addEventListener('click', playGame);
         }
 
+
         function playGame(еv) {
+            debugger;
+            //Player Choice
             let playerChoice = еv.currentTarget.id;
-            console.log(`Player - ${playerChoice}`);
+            let playerChoiceImg = document.getElementById(playerChoice);
+            let borderPlayer = ''
+            playerChoiceImg.style.border = borderPlayer;
+
+            //Computer Choice
             let computerChoise = Math.random();
-            console.log(`Computer - ${computerChoise}`);
             if (computerChoise < 0.33) {
                 computerChoise = 'rock';
             } else if (computerChoise < 0.67) {
@@ -87,19 +94,30 @@ function game() {
             } else {
                 computerChoise = 'paper';
             }
+            let computerChoiseImg = document.getElementById(computerChoise);
+            let borderComputer = '';
+            computerChoiseImg.style.border = borderComputer;
 
+            //Result Game
             let resultTempGame = checkWinner(playerChoice, computerChoise);
             if (resultTempGame == 'player') {
                 userResultValue++;
-                userResultDiv.textContent = `${playerName}: ${userResultValue}`;
+                borderPlayer = '5px solid red';
+                playerChoiceImg.style.border = borderPlayer;
+                borderComputer = '1px solid blue';
+                computerChoiseImg.style.border = borderComputer;
             } else if (resultTempGame == 'computer') {
                 computerResultValue++;
                 computerResultDiv.textContent = `Computer: ${computerResultValue}`;
+                borderPlayer = '1px solid red';
+                playerChoiceImg.style.border = borderPlayer;
+                borderComputer = '5px solid blue';
+                computerChoiseImg.style.border = borderComputer;
             } else if (resultTempGame == 'equal') {
                 window.alert('it is a tie!');
-            }
+            };
 
-
+            // Check who is the winner
             function checkWinner(playerChoice, computerChoise) {
                 if (playerChoice == 'rock') {
                     if (computerChoise == 'scissors') {

@@ -14,11 +14,9 @@
     padding: 10px;
 }
 
-.result {
+.result,
+.gameEl,
+img {
     display: inline-block;
     width: 40%;
-}
-
-.gameEl {
-    height: 100px;
 }
