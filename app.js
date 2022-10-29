@@ -29,6 +29,28 @@ function game() {
         parentMainElement.appendChild(resultDivElement)
 
 
+        //create main game
+        const gameMainElement = document.createElement('div');
+
+        const rockElement = document.createElement('img');
+        rockElement.classList.add('gameEl');
+        rockElement.classList.add('rock');
+        rockElement.setAttribute('src', './img/rock.png')
+        gameMainElement.appendChild(rockElement);
+
+        const scissorsElement = document.createElement('img');
+        scissorsElement.classList.add('gameEl');
+        scissorsElement.classList.add('scissors');
+        scissorsElement.setAttribute('src', './img/scissors.png')
+        gameMainElement.appendChild(scissorsElement);
+
+        const paperElement = document.createElement('img');
+        paperElement.classList.add('gameEl');
+        paperElement.classList.add('paper');
+        paperElement.setAttribute('src', './img/paper.png')
+        gameMainElement.appendChild(paperElement);
+
+        parentMainElement.appendChild(gameMainElement)
 
     });
 }
