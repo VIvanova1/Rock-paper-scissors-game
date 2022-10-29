@@ -13,3 +13,8 @@
 .playerUser>* {
     padding: 10px;
 }
+
+.result {
+    display: inline-block;
+    width: 40%;
+}

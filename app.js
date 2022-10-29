@@ -17,11 +17,13 @@ function game() {
         const userResultDiv = document.createElement('div');
         let userResultValue = 0;
         userResultDiv.textContent = `${playerName}: ${userResultValue}`;
+        userResultDiv.classList.add('result')
         resultDivElement.appendChild(userResultDiv);
 
         const computerResultDiv = document.createElement('div');
         let computerResultValue = 0;
         computerResultDiv.textContent = `Computer: ${computerResultValue}`;
+        computerResultDiv.classList.add('result')
         resultDivElement.appendChild(computerResultDiv);
 
         parentMainElement.appendChild(resultDivElement)
