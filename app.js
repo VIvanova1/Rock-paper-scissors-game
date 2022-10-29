@@ -56,8 +56,19 @@ function game() {
         gameMainElement.appendChild(paperElement);
 
         parentMainElement.appendChild(gameMainElement);
-        const allGameEl = Array.from(document.querySelectorAll('.gameEl'));
 
+        //reset game
+        const resetBtnEl = document.createElement('button');
+        resetBtnEl.textContent = 'Reset Game'
+        resetBtnEl.addEventListener('click', (e) => {
+            userResultValue = 0;
+            userResultDiv.textContent = `${playerName}: ${userResultValue}`;
+            computerResultValue = 0;
+            computerResultDiv.textContent = `Computer: ${computerResultValue}`;
+        });
+        parentMainElement.appendChild(resetBtnEl);
+
+        const allGameEl = Array.from(document.querySelectorAll('.gameEl'));
 
         for (let i = 0; i < allGameEl.length; i++) {
             const element = allGameEl[i];
@@ -69,7 +80,6 @@ function game() {
             console.log(`Player - ${playerChoice}`);
             let computerChoise = Math.random();
             console.log(`Computer - ${computerChoise}`);
-            debugger;
             if (computerChoise < 0.33) {
                 computerChoise = 'rock';
             } else if (computerChoise < 0.67) {
@@ -117,6 +127,7 @@ function game() {
                     }
                 }
             }
+
 
         }
     });
