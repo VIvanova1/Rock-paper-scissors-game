@@ -23,7 +23,15 @@ function game() {
     computerResultDiv.classList.add('result')
     resultDivElement.appendChild(computerResultDiv);
 
-    parentMainElement.appendChild(resultDivElement)
+    parentMainElement.appendChild(resultDivElement);
+
+    // create a div for "tie path"
+    const privateDiv = document.createElement('div');
+    const pPrivate = document.createElement('p');
+    pPrivate.textContent = 'It is a tie!';
+    pPrivate.style.display = 'none';
+    privateDiv.appendChild(pPrivate);
+    parentMainElement.appendChild(privateDiv);
 
     //create main game
     const gameMainElement = document.createElement('div');
@@ -75,7 +83,7 @@ function game() {
 
 
     function playGame(еv) {
-
+        pPrivate.style.display = 'none';
         //Player Choice
         let playerChoice = еv.currentTarget.id;
         const playerImg = document.getElementById(playerChoice);
@@ -100,7 +108,7 @@ function game() {
             computerResultValue++;
             computerResultDiv.textContent = `Computer: ${computerResultValue}`;
         } else if (resultTempGame == 'equal') {
-            window.alert('it is a tie!');
+            pPrivate.style.display = 'inline-block'
         };
 
         // Check who is the winner
