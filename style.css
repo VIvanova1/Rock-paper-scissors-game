@@ -17,11 +17,17 @@
     padding: 10px;
 }
 
-.result,
+.result {
+    display: inline-block;
+    width: 45%;
+    font-size: 30px;
+    overflow: hidden;
+}
+
 .gameEl,
 img {
     display: inline-block;
-    width: 30%;
+    width: 48%;
 }
 
 .result-msg {
@@ -35,4 +41,14 @@ img {
     padding: 10px;
     margin: 30px auto;
     font-weight: 700;
+}
+
+@media only screen and (min-width: 1024px) {
+    * {
+        font-size: 32px;
+    }
+    .gameEl,
+    img {
+        width: 30%;
+    }
 }

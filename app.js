@@ -1,7 +1,7 @@
 function game() {
 
     const parentMainElement = document.getElementsByTagName('main')[0];
-    const playerName = document.getElementById('userName').value;
+    let playerName = document.getElementById('userName').value;
 
     //remove div for username
     const playerDiv = document.getElementsByClassName('playerUser');
@@ -13,6 +13,9 @@ function game() {
 
     const userResultDiv = document.createElement('div');
     let userResultValue = 0;
+    if (playerName == '') {
+        playerName = 'Player';
+    }
     userResultDiv.textContent = `${playerName}: ${userResultValue}`;
     userResultDiv.classList.add('result')
     resultDivElement.appendChild(userResultDiv);
