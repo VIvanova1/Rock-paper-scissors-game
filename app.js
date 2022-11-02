@@ -27,6 +27,7 @@ function game() {
 
     // create a div for "tie path"
     const privateDiv = document.createElement('div');
+    privateDiv.classList.add('result-msg')
     const pPrivate = document.createElement('p');
     pPrivate.textContent = 'It is a tie!';
     pPrivate.style.display = 'none';
