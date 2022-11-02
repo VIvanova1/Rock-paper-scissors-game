@@ -1,12 +1,15 @@
 * {
     padding: 0;
     margin: 0;
+    text-align: center;
+    font-family: 'Shalimar', cursive;
+    font-size: 32px;
+    letter-spacing: 2px;
 }
 
 .game {
     min-width: 80%;
     margin: 0 auto;
-    text-align: center;
     padding: 20px;
 }
 
@@ -18,5 +21,18 @@
 .gameEl,
 img {
     display: inline-block;
-    width: 40%;
+    width: 30%;
+}
+
+.result-msg {
+    padding: 20px;
+    font-size: larger;
+    color: brown;
+    font-weight: 900;
+}
+
+#resetBtn {
+    padding: 10px;
+    margin: 30px auto;
+    font-weight: 700;
 }
